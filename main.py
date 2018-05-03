@@ -4,6 +4,25 @@ import random
 import os
 
 
+def choose(inputtext = '>>>'):
+	p('1) Stone')
+	p('2) Scissors')
+	p('3) Paper')
+
+	c = input(inputtext)
+
+	try:
+		c = int(c)
+	except:
+		p('Incorrect choose')
+		return choose(inputtext = inputtext)
+
+	if c < 1 or c > 3:
+		p('Incorrect choose')
+		return choose(inputtext = inputtext)
+
+	return c
+
 def cls():
 	os.system('cls')
 
@@ -31,10 +50,6 @@ def game():
 		v = str(v)
 
 		if v == '1':
-			p('1) Stone')
-			p('2) Scissors')
-			p('3) Paper')
-
 			app = random.randint(1,3)
 			if app == 1:
 				app = 'Stone'
@@ -43,17 +58,7 @@ def game():
 			else:
 				app = 'Paper'
 
-			player = input('>>>')
-
-			try:
-				player = int(player)
-			except:
-				p('Incorrect choose')
-				return
-
-			if player < 1 or player > 3:
-				p('Incorrect choose')
-				return
+			player = choose()
 
 			if player == 1:
 				p('Your choose: Stone')
@@ -85,20 +90,7 @@ def game():
 			input('Continue - click to ENTER ')
 
 		if v == '2':
-			p('1) Stone')
-			p('2) Scissors')
-			p('3) Paper')
-			player1 = input('Player#1>>>')
-
-			try:
-				player1 = int(player1)
-			except:
-				p('Incorrect choose')
-				return
-
-			if player1 < 1 or player1 > 3:
-				p('Incorrect choose')
-				return
+			player1 = choose(inputtext = 'Player#1>>>')
 
 			if player1 == 1:
 				player1 = 'Stone'
@@ -106,11 +98,10 @@ def game():
 				player1 ='Scissors'
 			else:
 				player1 = 'Paper'
-			p('1) Stone')
-			p('2) Scissors')
-			p('3) Paper')
+
 			cls()
-			player2 = int(input('Player#2>>>'))
+			player2 = choose(inputtext = 'Player#2>>>')
+
 			if player2 == 1:
 				p('Player 1 choose: ' + str(player1))
 				p('Player 2 choose: Stone')
