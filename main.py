@@ -11,7 +11,7 @@ def cls():
 def game():
 	p('===GAME FOR WINDOWS===')
 	p('1-START GAME VS BOT')
-	p('2-START GAME VS BOTSTART GAME TWO PLAYERS')
+	p('2-START GAME TWO PLAYERS')
 	p('======================')
 	v = input('>>>')
 	if v == '1':
