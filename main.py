@@ -10,26 +10,46 @@ def cls():
 
 def game():
 	p('===GAME FOR WINDOWS===')
-	p('1)Stone')
-	p('2)Scissors')
-	p('3)Paper')
-
-	player = input('>>>')
-	if player == '1':
-		p('Your choose: Stone')
-	elif player == '2':
-		p('Your choose: Scissors')
-	else:
-		p('Your choose: Paper')
+	p('1) Stone')
+	p('2) Scissors')
+	p('3) Paper')
 
 	app = random.randint(1,3)
-	app = str(app)
-	if app == '1':
-		p('Bot choose: Stone') 	
-	elif app == '2':
-		p('Bot choose: Scissors')
-	elif app == '3':
-		p('Bot choose: Paper')
+	if app == 1:
+		app = 'Stone'
+	elif app == 2:
+		app ='Scissors'
+	else:
+		app = 'Paper'
+
+	player = int(input('>>>'))
+	if player == 1:
+		p('Your choose: Stone')
+		p('Bot choose:' + str(app))
+		if app == 'Stone':
+			p('drow')
+		elif app == 'Scissors':
+			p('win')
+		else:
+			p('lose')
+	elif player == 2:
+		p('Your choose: Scissors')
+		p('Bot choose:' + str(app))
+		if app == 'Stone':
+			p('lose')
+		elif app == 'Scissors':
+			p('drow')
+		else:
+			p('win')
+	elif player == 3:
+		p('Your choose: Paper')
+		p('Bot choose:' + str(app))
+		if app == 'Stone':
+			p('win')
+		elif app == 'Scissors':
+			p('lose')
+		else:
+			p('drow')
 
 
 
