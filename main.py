@@ -18,6 +18,18 @@ def game():
 		p('3-EXIT')
 		p('========================')
 		v = input('>>>')
+		try:
+			v = int(v)
+		except:
+			p('Incorrect choose')
+			return
+
+		if int(v) < 1 or int(v) > 3:
+			p('Incorrect choose')
+			return
+
+		v = str(v)
+
 		if v == '1':
 			p('1) Stone')
 			p('2) Scissors')
@@ -31,7 +43,18 @@ def game():
 			else:
 				app = 'Paper'
 
-			player = int(input('>>>'))
+			player = input('>>>')
+
+			try:
+				player = int(player)
+			except:
+				p('Incorrect choose')
+				return
+
+			if player < 1 or player > 3:
+				p('Incorrect choose')
+				return
+
 			if player == 1:
 				p('Your choose: Stone')
 				p('Bot choose: ' + str(app))
@@ -65,7 +88,18 @@ def game():
 			p('1) Stone')
 			p('2) Scissors')
 			p('3) Paper')
-			player1 = int(input('Player#1>>>'))
+			player1 = input('Player#1>>>')
+
+			try:
+				player1 = int(player1)
+			except:
+				p('Incorrect choose')
+				return
+
+			if player1 < 1 or player1 > 3:
+				p('Incorrect choose')
+				return
+
 			if player1 == 1:
 				player1 = 'Stone'
 			elif player1 == 2:
