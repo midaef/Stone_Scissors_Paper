@@ -9,10 +9,11 @@ def cls():
 
 
 def game():
-	p('===GAME FOR WINDOWS===')
+	p('===GAME FOR WINDOWS=====')
+	p('==Rock/Scissors/Paper===')
 	p('1-START GAME VS BOT')
 	p('2-START GAME TWO PLAYERS')
-	p('======================')
+	p('========================')
 	v = input('>>>')
 	if v == '1':
 		p('1) Stone')
@@ -59,7 +60,7 @@ def game():
 		p('1) Stone')
 		p('2) Scissors')
 		p('3) Paper')
-		player1 = int(input('Input player 1>>>'))
+		player1 = int(input('Player#1>>>'))
 		if player1 == 1:
 			player1 = 'Stone'
 		elif player1 == 2:
@@ -70,7 +71,7 @@ def game():
 		p('2) Scissors')
 		p('3) Paper')
 		cls()
-		player2 = int(input('Input player 2>>>'))
+		player2 = int(input('Player#2>>>'))
 		if player2 == 1:
 			p('Player 1 choose: ' + str(player1))
 			p('Player 2 choose: Stone')
@@ -98,6 +99,7 @@ def game():
 				p('Player 1 win')
 			else:
 				p('Drow')
+
 
 if __name__ == '__main__':
 	cls()
