@@ -10,10 +10,11 @@ def cls():
 
 def game():
 	p('===GAME FOR WINDOWS===')
-	p('1-START GAME TWO PLAYERS')
-	p('2-START GAME VS BOT')
+	p('1-START GAME VS BOT')
+	p('2-START GAME VS BOTSTART GAME TWO PLAYERS')
+	p('======================')
 	v = input('>>>')
-	if v == '2':
+	if v == '1':
 		p('1) Stone')
 		p('2) Scissors')
 		p('3) Paper')
@@ -29,32 +30,35 @@ def game():
 		player = int(input('>>>'))
 		if player == 1:
 			p('Your choose: Stone')
-			p('Bot choose:' + str(app))
+			p('Bot choose: ' + str(app))
 			if app == 'Stone':
-				p('drow')
+				p('Drow')
 			elif app == 'Scissors':
-				p('win')
+				p('Win')
 			else:
-				p('lose')
+				p('Lose')
 		elif player == 2:
 			p('Your choose: Scissors')
-			p('Bot choose:' + str(app))
+			p('Bot choose: ' + str(app))
 			if app == 'Stone':
-				p('lose')
+				p('Lose')
 			elif app == 'Scissors':
-				p('drow')
+				p('Drow')
 			else:
-				p('win')
+				p('Win')
 		elif player == 3:
 			p('Your choose: Paper')
-			p('Bot choose:' + str(app))
+			p('Bot choose: ' + str(app))
 			if app == 'Stone':
-				p('win')
+				p('Win')
 			elif app == 'Scissors':
-				p('lose')
+				p('Lose')
 			else:
-				p('drow')
-	if v == '1':
+				p('Drow')
+	if v == '2':
+		p('1) Stone')
+		p('2) Scissors')
+		p('3) Paper')
 		player1 = int(input('Input player 1>>>'))
 		if player1 == 1:
 			player1 = 'Stone'
@@ -62,35 +66,38 @@ def game():
 			player1 ='Scissors'
 		else:
 			player1 = 'Paper'
-
+		p('1) Stone')
+		p('2) Scissors')
+		p('3) Paper')
+		cls()
 		player2 = int(input('Input player 2>>>'))
 		if player2 == 1:
-			p('Player 1 choose:' + str(player1))
-			p('Player 2 choose: Paper')
+			p('Player 1 choose: ' + str(player1))
+			p('Player 2 choose: Stone')
 			if player1 == 'Stone':
-				p('drow')
+				p('Drow')
 			elif player1 == 'Scissors':
 				p('Player 2 win')
 			else:
 				p('Player 1 win')
 		elif player2 == 2:
-			p('Player 1 choose:' + str(player1))
-			p('Player 2 choose: Paper')
+			p('Player 1 choose: ' + str(player1))
+			p('Player 2 choose: Scissors')
 			if player1 == 'Stone':
-				p('lose')
+				p('Player 1 win')
 			elif player1 == 'Scissors':
-				p('drow')
+				p('Drow')
 			else:
-				p('win')
+				p('Player 2 win')
 		elif player2 == 3:
-			p('Player 1 choose:' + str(player1))
+			p('Player 1 choose: ' + str(player1))
 			p('Player 2 choose: Paper')
 			if player1 == 'Stone':
-				p('win')
+				p('Player 2 win')
 			elif player1 == 'Scissors':
-				p('lose')
+				p('Player 1 win')
 			else:
-				p('drow')
+				p('Drow')
 
 if __name__ == '__main__':
 	cls()
