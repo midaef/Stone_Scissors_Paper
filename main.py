@@ -1,7 +1,15 @@
 
 from ezprint import p
 import random
+import time
 import os
+
+
+def win(isDrow = False, whowin = 'Player 1'):
+	if isDrow:
+		print('Drow')
+	else:
+		print(whowin  + ' win!')
 
 
 def choose(inputtext = '>>>'):
@@ -64,32 +72,34 @@ def game():
 				p('Your choose: Stone')
 				p('Bot choose: ' + str(app))
 				if app == 'Stone':
-					p('Drow')
+					# p('Drow')
+					win(isDrow = True)
 				elif app == 'Scissors':
-					p('Win')
+					win(whowin = 'Player')
 				else:
-					p('Lose')
+					win(whowin = 'Bot')
 			elif player == 2:
 				p('Your choose: Scissors')
 				p('Bot choose: ' + str(app))
 				if app == 'Stone':
-					p('Lose')
+					win(whowin = 'Bot')
 				elif app == 'Scissors':
-					p('Drow')
+					win(isDrow = True)
 				else:
-					p('Win')
+					win(whowin = 'Player')
 			elif player == 3:
 				p('Your choose: Paper')
 				p('Bot choose: ' + str(app))
 				if app == 'Stone':
-					p('Win')
+					win(whowin = 'Player')
 				elif app == 'Scissors':
-					p('Lose')
+					win(whowin = 'Bot')
 				else:
-					p('Drow')
+					win(isDrow = True)
 			input('Continue - click to ENTER ')
 
 		if v == '2':
+			cls()
 			player1 = choose(inputtext = 'Player#1>>>')
 
 			if player1 == 1:
@@ -106,29 +116,29 @@ def game():
 				p('Player 1 choose: ' + str(player1))
 				p('Player 2 choose: Stone')
 				if player1 == 'Stone':
-					p('Drow')
+					win(isDrow = True)
 				elif player1 == 'Scissors':
-					p('Player 2 win')
+					win(whowin = 'Player 2')
 				else:
-					p('Player 1 win')
+					win(whowin = 'Player 1')
 			elif player2 == 2:
 				p('Player 1 choose: ' + str(player1))
 				p('Player 2 choose: Scissors')
 				if player1 == 'Stone':
-					p('Player 1 win')
+					win(whowin = 'Player 1')
 				elif player1 == 'Scissors':
-					p('Drow')
+					win(isDrow = True)
 				else:
-					p('Player 2 win')
+					win(whowin = 'Player 2')
 			elif player2 == 3:
 				p('Player 1 choose: ' + str(player1))
 				p('Player 2 choose: Paper')
 				if player1 == 'Stone':
-					p('Player 2 win')
+					win(whowin = 'Player 2')
 				elif player1 == 'Scissors':
-					p('Player 1 win')
+					win(whowin = 'Player 1')
 				else:
-					p('Drow')
+					win(isDrow = True)
 			input('Continue - click to ENTER ')
 
 		if v == '3':
